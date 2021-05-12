@@ -1,0 +1,27 @@
+
+<MyLayout>
+    orientation: 'vertical'
+    size: root.width, root.height
+
+    AndroidCamera:
+        size_hint: 1, 0.8
+        id: acam
+        index: 0
+        resolution: self.camera_resolution
+        allow_stretch: True
+        play: True
+        zoom: 1
+
+    Label:
+        size_hint: 1, 0.1
+        id: slider_value
+        font_size: self.height * 0.5
+        text: '1x'
+
+    Slider:
+        size_hint: 1, 0.1
+        min: 1.0
+        max: 5.0
+        step: 0.1
+        on_value: root.zoom_image(*args)
+
